@@ -57,6 +57,24 @@ namespace CodeWars
             }
             return rez;
         }
+
+        public static int FindEvenIndex(int[] arr)
+        {
+            //Code goes here!
+            for (int i = 0; i < arr.Length; i++)
+            {
+                var arraySum = arr.Sum();
+                var arrayBefore = arr.Take(i).Sum();
+                var arrayAfter = arraySum - arrayBefore - arr[i];
+
+                if (arrayBefore == arrayAfter)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         #endregion
     }
 }
