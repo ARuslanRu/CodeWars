@@ -107,6 +107,21 @@ namespace CodeWars
                     return $"{name[0]}, {name[1]} and {name.Length - 2} others like this";
             }
         }
+
+        public static int Find(int[] integers)
+        {
+            var i = integers.Where(x => x % 2 == 0).ToArray();
+            if (i.Length == 1)
+            {
+                return i[0];
+            }
+            i = integers.Where(x => x % 2 != 0).ToArray();
+            if (i.Length == 1)
+            {
+                return i[0];
+            }
+            return -1;
+        }
         #endregion
     }
 }

@@ -45,6 +45,18 @@ namespace CodeWars.Tests
             Assert.AreEqual("Max, John and Mark like this", Kata.Likes(new string[] { "Max", "John", "Mark" }));
             Assert.AreEqual("Alex, Jacob and 2 others like this", Kata.Likes(new string[] { "Alex", "Jacob", "Mark", "Max" }));
         }
+
+        [TestMethod]
+        public void FindTest()
+        {
+            int[] exampleTest1 = { 2, 6, 8, -10, 3 };
+            int[] exampleTest2 = { 206847684, 1056521, 7, 17, 1901, 21104421, 7, 1, 35521, 1, 7781 };
+            int[] exampleTest3 = { int.MaxValue, 0, 1 };
+
+            Assert.IsTrue(3 == Kata.Find(exampleTest1));
+            Assert.IsTrue(206847684 == Kata.Find(exampleTest2));
+            Assert.IsTrue(0 == Kata.Find(exampleTest3));
+        }
         #endregion
     }
 }
