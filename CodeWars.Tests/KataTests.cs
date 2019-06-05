@@ -26,6 +26,15 @@ namespace CodeWars.Tests
             Assert.AreEqual(3, Kata.FindEvenIndex(new int[] { 20, 10, 30, 10, 10, 15, 35 }));
         }
 
+        [TestMethod]
+        public void FindNbTest()
+        {
+            Assert.AreEqual(2022, Kata.FindNb(4183059834009));
+            Assert.AreEqual(-1, Kata.FindNb(24723578342962));
+            Assert.AreEqual(4824, Kata.FindNb(135440716410000));
+            Assert.AreEqual(3568, Kata.FindNb(40539911473216));
+
+        }
         #endregion
     }
 }

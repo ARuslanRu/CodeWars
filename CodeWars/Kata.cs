@@ -75,6 +75,21 @@ namespace CodeWars
             return -1;
         }
 
+        public static long FindNb(long m)
+        {
+            var i = 0;
+            while (m > 0)
+            {
+                m = m - Convert.ToInt64(Math.Pow(i, 3));
+
+                if (m == 0)
+                {
+                    return i;
+                }
+                i++;
+            }
+            return -1;
+        }
         #endregion
     }
 }
