@@ -72,6 +72,17 @@ namespace CodeWars.Tests
             Assert.AreEqual("u  5     *****\rw  4     ****\rx  4     ****\rz  4     ****",
                 Kata.Hist("ttopvdaxgwfpzjmomkwssytktaizqtsekfmfhrabidwaugioqyyzrxbugsusxkfdevmijqyprcoxfyjqwsutoutjgozyhsoytg"));
         }
+
+        [TestMethod]
+        public void DuplicateCountTest()
+        {
+            Assert.AreEqual(0, Kata.DuplicateCount(""));
+            Assert.AreEqual(0, Kata.DuplicateCount("abcde"));
+            Assert.AreEqual(2, Kata.DuplicateCount("aabbcde"));
+            Assert.AreEqual(2, Kata.DuplicateCount("aabBcde"), "should ignore case");
+            Assert.AreEqual(1, Kata.DuplicateCount("Indivisibility"));
+            Assert.AreEqual(2, Kata.DuplicateCount("Indivisibilities"), "characters may not be adjacent");
+        }
         #endregion
     }
 }
