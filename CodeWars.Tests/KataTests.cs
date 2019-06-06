@@ -57,6 +57,21 @@ namespace CodeWars.Tests
             Assert.IsTrue(206847684 == Kata.Find(exampleTest2));
             Assert.IsTrue(0 == Kata.Find(exampleTest3));
         }
+
+        [TestMethod]
+        public void HistTest()
+        {
+            Assert.AreEqual("u  3     ***\rw  4     ****\rx  6     ******\rz  6     ******",
+                Kata.Hist("tpwaemuqxdmwqbqrjbeosjnejqorxdozsxnrgpgqkeihqwybzyymqeazfkyiucesxwutgszbenzvgxibxrlvmzihcb"));
+            Assert.AreEqual("u  2     **\rw  1     *\rz  1     *",
+                Kata.Hist("aaifzlnderpeurcuqjqeywdq"));
+            Assert.AreEqual("u  4     ****\rw  3     ***\rx  4     ****\rz  4     ****",
+                Kata.Hist("sjeneccyhrcpfvpujfaoaykqllteovskclebmzjeqepilxygdmzvdfmxbqdzubkzturnuqxsewrwgmdfwgdx"));
+            Assert.AreEqual("u  1     *\rw  4     ****\rx  2     **\rz  1     *",
+                Kata.Hist("bnxyytdtqrkeaswymiwbxnuydwthweyzny"));
+            Assert.AreEqual("u  5     *****\rw  4     ****\rx  4     ****\rz  4     ****",
+                Kata.Hist("ttopvdaxgwfpzjmomkwssytktaizqtsekfmfhrabidwaugioqyyzrxbugsusxkfdevmijqyprcoxfyjqwsutoutjgozyhsoytg"));
+        }
         #endregion
     }
 }
