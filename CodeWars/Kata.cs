@@ -162,8 +162,6 @@ namespace CodeWars
             rez = Regex.Replace(rez, @"\r$", "");
             return rez;
         }
-
-
         #endregion
     }
 }
