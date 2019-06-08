@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
+using System.Xml.XPath;
+
 
 namespace CodeWars
 {
@@ -202,6 +205,27 @@ namespace CodeWars
             return string.Join("", s.Split(';')
                                     .Select(x => $"({string.Join(", ", x.Split(':').Reverse()).ToUpper()})")
                                     .OrderBy(x => x));
+        }
+
+
+        public static string Catalog(string s, string article)
+        {
+            s = $"<data>{s.Replace("\n\n", "")}</data>";
+            XDocument xDoc = XDocument.Parse(s);
+
+            var products = xDoc.XPathSelectElements("./data/prod")
+                               .Where(x => x.XPathSelectElement("./name").Value.Contains(article));
+
+            if (products.Any())
+            {
+                return products.Select(x => $"{x.XPathSelectElement("./name").Value} > prx: ${x.XPathSelectElement("./prx").Value} qty: {x.XPathSelectElement("./qty").Value}\n")
+                               .Aggregate((x, y) => x + y)
+                               .Trim();
+            }
+            else
+            {
+                return "Nothing";
+            }
         }
         #endregion
     }
