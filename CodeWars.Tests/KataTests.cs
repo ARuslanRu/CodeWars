@@ -6,6 +6,23 @@ namespace CodeWars.Tests
     [TestClass]
     public class KataTests
     {
+        #region <5kyu>
+        [TestMethod]
+        public void ScrambleTest()
+        {
+            Assert.AreEqual(true, Kata.Scramble("rkqodlw", "world"));
+            Assert.AreEqual(true, Kata.Scramble("cedewaraaossoqqyt", "codewars"));
+            Assert.AreEqual(false, Kata.Scramble("katas", "steak"));
+            Assert.AreEqual(false, Kata.Scramble("scriptjavx", "javascript"));
+            Assert.AreEqual(true, Kata.Scramble("scriptingjava", "javascript"));
+            Assert.AreEqual(true, Kata.Scramble("scriptsjava", "javascripts"));
+            Assert.AreEqual(false, Kata.Scramble("javscripts", "javascript"));
+            Assert.AreEqual(true, Kata.Scramble("aabbcamaomsccdd", "commas"));
+            Assert.AreEqual(true, Kata.Scramble("commas", "commas"));
+            Assert.AreEqual(true, Kata.Scramble("sammoc", "commas"));
+        }
+        #endregion
+
         #region <6kyu>
         [TestMethod]
         public void ArrayDiffTest()
