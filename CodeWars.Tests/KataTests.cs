@@ -68,6 +68,27 @@ namespace CodeWars.Tests
 
         #region <6kyu>
         [TestMethod]
+        public void IsValidIpTest()
+        {
+            Assert.AreEqual(true, Kata.IsValidIp("0.0.0.0"));
+            Assert.AreEqual(true, Kata.IsValidIp("12.255.56.1"));
+            Assert.AreEqual(true, Kata.IsValidIp("137.255.156.100"));
+            Assert.AreEqual(false, Kata.IsValidIp(""));
+            Assert.AreEqual(false, Kata.IsValidIp("abc.def.ghi.jkl"));
+            Assert.AreEqual(false, Kata.IsValidIp("123.456.789.0"));
+            Assert.AreEqual(false, Kata.IsValidIp("12.34.56"));
+            Assert.AreEqual(false, Kata.IsValidIp("12.34.56.00"));
+            Assert.AreEqual(false, Kata.IsValidIp("12.34.56.7.8"));
+            Assert.AreEqual(false, Kata.IsValidIp("12.34.256.78"));
+            Assert.AreEqual(false, Kata.IsValidIp("1234.34.56"));
+            Assert.AreEqual(false, Kata.IsValidIp("pr12.34.56.78"));
+            Assert.AreEqual(false, Kata.IsValidIp("12.34.56.78sf"));
+            Assert.AreEqual(false, Kata.IsValidIp("12.34.56 .1"));
+            Assert.AreEqual(false, Kata.IsValidIp("12.34.56.-1"));
+            Assert.AreEqual(false, Kata.IsValidIp("123.045.067.089"));
+        }
+
+        [TestMethod]
         public void ArrayDiffTest()
         {
             CollectionAssert.AreEqual(new int[] { 2 }, Kata.ArrayDiff(new int[] { 1, 2 }, new int[] { 1 }));
@@ -210,6 +231,22 @@ namespace CodeWars.Tests
 
         }
 
+        #endregion
+
+        #region <7kyu>
+        [TestMethod]
+        public void DisemvowelTest()
+        {
+            Assert.AreEqual("Ths wbst s fr lsrs LL!", Kata.Disemvowel("This website is for losers LOL!"));
+        }
+
+        [TestMethod]
+        public void RemoveUrlAnchorTest()
+        {
+            Assert.AreEqual("www.codewars.com", Kata.RemoveUrlAnchor("www.codewars.com#about"));
+            Assert.AreEqual("www.codewars.com/katas/?page=1", Kata.RemoveUrlAnchor("www.codewars.com/katas/?page=1#about"));
+            Assert.AreEqual("www.codewars.com/katas/", Kata.RemoveUrlAnchor("www.codewars.com/katas/"));
+        }
         #endregion
     }
 }

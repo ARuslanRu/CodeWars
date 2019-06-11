@@ -148,6 +148,27 @@ namespace CodeWars
         #endregion
 
         #region <6kyu>
+        /// <summary>
+        /// Write an algorithm that will identify valid IPv4 addresses in dot-decimal format. IPs should be considered valid if they consist of four octets, with values between 0 and 255, inclusive.
+        /// Input to the function is guaranteed to be a single string.
+        /// Examples
+        /// Valid inputs:
+        /// 1.2.3.4
+        /// 123.45.67.89
+        /// Invalid inputs:
+        /// 1.2.3
+        /// 1.2.3.4.5
+        /// 123.456.78.90
+        /// 123.045.067.089
+        /// Note that leading zeros(e.g. 01.02.03.04) are considered invalid.
+        /// </summary>
+        /// <param name="ipAddres"></param>
+        /// <returns></returns>
+        public static bool IsValidIp(string ipAddres)
+        {
+            return Regex.IsMatch(ipAddres, @"^(\d|[1-9]\d|[1]\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|[1]\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|[1]\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|[1]\d\d|2[0-4]\d|25[0-5])$");
+        }
+
         public static int[] ArrayDiff(int[] a, int[] b)
         {
             if (b.Length == 0)
@@ -380,6 +401,35 @@ namespace CodeWars
             {
                 return "Nothing";
             }
+        }
+        #endregion
+
+        #region <7kyu>
+        /// <summary>
+        /// Trolls are attacking your comment section!
+        /// A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+        /// Your task is to write a function that takes a string and return a new string with all vowels removed.
+        /// For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+        /// Note: for this kata y isn't considered a vowel.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string Disemvowel(string str)
+        {
+            return new Regex(@"[a|u|e|o|i]", RegexOptions.IgnoreCase).Replace(str, "");
+        }
+
+        /// <summary>
+        /// Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+        /// Examples:
+        /// Kata.RemoveUrlAnchor("www.codewars.com#about") => "www.codewars.com"
+        /// Kata.RemoveUrlAnchor("www.codewars.com?page=1") => "www.codewars.com?page=1"
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public static string RemoveUrlAnchor(string url)
+        {
+            return Regex.Replace(url, @"#\w*", "");
         }
         #endregion
     }
