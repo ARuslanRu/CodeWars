@@ -13,6 +13,67 @@ namespace CodeWars
     public class Kata
     {
 
+        #region <4kyu>
+
+        /// <summary>
+        /// We have a string s
+        /// Let's say you start with this: "String"
+        /// The first thing you do is reverse it: "gnirtS"
+        /// Then you will take the string from the 1st position and reverse it again: "gStrin"
+        /// Then you will take the string from the 2nd position and reverse it again: "gSnirt"
+        /// Then you will take the string from the 3rd position and reverse it again: "gSntri"
+        /// Continue this pattern until you have done every single position, and then you will return the string you have created. For this particular string, you would return: "gSntir"
+        /// now,
+        /// The Task:
+        /// In this kata, we also have a number x
+        /// take that reversal function, and apply it to the string x times.
+        /// return the result of the string after applying the reversal function to it x times.
+        /// example where s = "String" and x = 3:
+        /// after 0 iteration s = "String"
+        /// after 1 iteration s = "gSntir"
+        /// after 2 iterations s = "rgiStn"
+        /// after 3 iterations s = "nrtgSi"
+        /// so you would return "nrtgSi".
+        /// Note
+        /// String lengths may exceed 2 million
+        /// x exceeds a billion
+        /// be read to optimize
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public static string StringFunc(string s, long x)
+        {
+            //TODO: Тест на CodeWars работает более 12 сек. Вероятно требуется оптимизация.
+            var len = s.Length;
+            var resultS = s;
+
+            for (int k = 0; k < x; k++)
+            {
+                StringBuilder a = new StringBuilder();
+                for (int i = 0; i < len; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        a.Append(resultS[len - 1 - i / 2]);
+                    }
+                    else
+                    {
+                        a.Append(resultS[i / 2]);
+                    }
+                }
+                resultS = a.ToString();
+                if (resultS.Equals(s))
+                {
+                    x = x % k;
+                    k = 0;
+                }
+            }
+            return resultS;
+        }
+
+        #endregion
+
         #region <5kyu>
         /// <summary>
         /// Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
@@ -39,6 +100,49 @@ namespace CodeWars
                 }
             }
             return true;
+        }
+
+        /// <summary>
+        /// Welcome
+        /// This kata is inspired by This Kata
+        /// We have a string s
+        /// We have a number n
+        /// Here is a function that takes your string, concatenates the even-indexed chars to the front, odd-indexed chars to the back.
+        /// Examples
+        /// s = "Wow Example!"
+        /// result = "WwEapeo xml!"
+        /// s = "I'm JomoPipi"
+        /// result = "ImJm ii' ooPp"
+        /// The Task:
+        /// return the result of the string after applying the function to it n times.
+        /// example where s = "qwertyuio" and n = 2:
+        /// after 1 iteration s = "qetuowryi"
+        /// after 2 iterations s = "qtorieuwy"
+        /// return "qtorieuwy"
+        /// Note
+        /// there's a lot of tests, big strings, and n is greater than a billion
+        /// so be ready to optimize.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static string JumbledString(string s, long n)
+        {
+            //TODO: Работает, но необходима оптимизация. Тест на CodeWars выполняется более 12 секунд.
+            var str = s;
+            var dict = new Dictionary<long, string>();
+
+            for (int i = 1; i <= n; i++)
+            {
+                str = string.Concat(str.Where((x, index) => index % 2 == 0)) + string.Concat(str.Where((x, index) => index % 2 != 0));
+                dict.Add(i, str);
+                if (str.Equals(s))
+                {
+                    dict.TryGetValue(n % i, out string value);
+                    return value;
+                }
+            }
+            return str;
         }
 
         #endregion

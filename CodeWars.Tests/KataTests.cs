@@ -6,7 +6,50 @@ namespace CodeWars.Tests
     [TestClass]
     public class KataTests
     {
+
+        #region <4kyu>
+        [TestMethod]
+        public void StringFuncTest()
+        {
+            string s, a;
+            s = "This is a string exemplification!";
+            a = s;
+            Assert.AreEqual(a, Kata.StringFunc(s, 0));
+            s = "String for test: incommensurability";
+            a = "ySttirliinbga rfuosrn etmemsotc:n i";
+            Assert.AreEqual(a, Kata.StringFunc(s, 1));
+            s = "Ohh Man God Damn";
+            a = " nGOnmohaadhMD  ";
+            Assert.AreEqual(a, Kata.StringFunc(s, 7));
+            s = "Ohh Man God Damnn";
+            a = "haG mnad MhO noDn";
+            Assert.AreEqual(a, Kata.StringFunc(s, 19));
+        }
+
+        #endregion
+
         #region <5kyu>
+        [TestMethod]
+        public void JumbledStringTest()
+        {
+            string s, a;
+            s = "c#";
+            a = "c#";
+            Assert.AreEqual(a, Kata.JumbledString(s, 0));
+            s = "Such Wow!";
+            a = "Sc o!uhWw";
+            Assert.AreEqual(a, Kata.JumbledString(s, 1));
+            s = "better example";
+            a = "bexltept merae";
+            Assert.AreEqual(a, Kata.JumbledString(s, 2));
+            s = "qwertyuio";
+            a = "qtorieuwy";
+            Assert.AreEqual(a, Kata.JumbledString(s, 2));
+            s = "Greetings";
+            a = "Gtsegenri";
+            Assert.AreEqual(a, Kata.JumbledString(s, 8));
+        }
+
         [TestMethod]
         public void ScrambleTest()
         {
