@@ -149,6 +149,26 @@ namespace CodeWars
 
         #region <6kyu>
         /// <summary>
+        /// Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+        /// Examples
+        /// Kata.ToCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
+        /// Kata.ToCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string ToCamelCase(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return str;
+            }
+            var words = Regex.Split(str, "[-_]", RegexOptions.IgnoreCase);
+            var newStr = string.Join("", words.Select(x => char.ToUpper(x[0]) + x.Substring(1, x.Length - 1)));
+            return str[0] + newStr.Substring(1, newStr.Length - 1);
+        }
+
+
+        /// <summary>
         /// Write an algorithm that will identify valid IPv4 addresses in dot-decimal format. IPs should be considered valid if they consist of four octets, with values between 0 and 255, inclusive.
         /// Input to the function is guaranteed to be a single string.
         /// Examples
