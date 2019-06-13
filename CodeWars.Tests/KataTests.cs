@@ -69,6 +69,14 @@ namespace CodeWars.Tests
         #region <6kyu>
 
         [TestMethod]
+        public void CleverSplitTest()
+        {
+            CollectionAssert.AreEqual(new string[] { "Buy", "a", "!car", "[!red green !white]", "[cheap or !new]" }, Kata.CleverSplit("Buy a !car [!red green !white] [cheap or !new]"));
+            CollectionAssert.AreEqual(new string[] { "!Learning", "!C#", "is", "[a joy]" }, Kata.CleverSplit("!Learning !C# is [a joy]"));
+            CollectionAssert.AreEqual(new string[] { "[Cats and dogs]", "are", "!beautiful", "and", "[cute]" }, Kata.CleverSplit("[Cats and dogs] are !beautiful and [cute]"));
+        }     
+
+        [TestMethod]
         public void CountSmileysTest()
         {
             Assert.AreEqual(4, Kata.CountSmileys(new string[] { ":D", ":~)", ";~D", ":)" }));
@@ -76,7 +84,6 @@ namespace CodeWars.Tests
             Assert.AreEqual(1, Kata.CountSmileys(new string[] { ";]", ":[", ";*", ":$", ";-D" }));
             Assert.AreEqual(0, Kata.CountSmileys(new string[] { ";", ")", ";*", ":$", "8-D" }));
         }
-
 
         [TestMethod]
         public void SplitStringTest()
