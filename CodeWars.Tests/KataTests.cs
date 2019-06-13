@@ -68,6 +68,13 @@ namespace CodeWars.Tests
 
         #region <6kyu>
         [TestMethod]
+        public void SplitStringTest()
+        {
+            CollectionAssert.AreEqual(new string[] { "ab", "c_" }, Kata.SplitString("abc"));
+            CollectionAssert.AreEqual(new string[] { "ab", "cd", "ef" }, Kata.SplitString("abcdef"));
+        }
+
+        [TestMethod]
         public void ToCamelCaseTest()
         {
             Assert.AreEqual("theStealthWarrior", Kata.ToCamelCase("the_stealth_warrior"), "Kata.ToCamelCase('the_stealth_warrior') did not return correct value");

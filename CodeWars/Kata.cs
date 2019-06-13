@@ -148,6 +148,21 @@ namespace CodeWars
         #endregion
 
         #region <6kyu>
+
+        /// <summary>
+        /// Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+        /// Examples:
+        /// SplitString.Solution("abc"); // should return ["ab", "c_"]
+        /// SplitString.Solution("abcdef"); // should return ["ab", "cd", "ef"]
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string[] SplitString(string str)
+        {
+            var matches = str.Length % 2 == 0 ? Regex.Matches(str, @"\w\w") : Regex.Matches(str + "_", @"\w\w");
+            return matches.Cast<Match>().Select(m => m.Value).ToArray();
+        }
+
         /// <summary>
         /// Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
         /// Examples
