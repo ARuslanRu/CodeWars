@@ -67,6 +67,17 @@ namespace CodeWars.Tests
         #endregion
 
         #region <6kyu>
+
+        [TestMethod]
+        public void CountSmileysTest()
+        {
+            Assert.AreEqual(4, Kata.CountSmileys(new string[] { ":D", ":~)", ";~D", ":)" }));
+            Assert.AreEqual(2, Kata.CountSmileys(new string[] { ":)", ":(", ":D", ":O", ":;" }));
+            Assert.AreEqual(1, Kata.CountSmileys(new string[] { ";]", ":[", ";*", ":$", ";-D" }));
+            Assert.AreEqual(0, Kata.CountSmileys(new string[] { ";", ")", ";*", ":$", "8-D" }));
+        }
+
+
         [TestMethod]
         public void SplitStringTest()
         {
