@@ -67,6 +67,12 @@ namespace CodeWars.Tests
         #endregion
 
         #region <6kyu>
+        [TestMethod]
+        public void FindMissingLetterTest()
+        {
+            Assert.AreEqual('e', Kata.FindMissingLetter(new[] { 'a', 'b', 'c', 'd', 'f' }));
+            Assert.AreEqual('P', Kata.FindMissingLetter(new[] { 'O', 'Q', 'R', 'S' }));
+        }
 
         [TestMethod]
         public void ValidPhoneNumberTest()
