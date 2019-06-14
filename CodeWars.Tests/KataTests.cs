@@ -69,6 +69,13 @@ namespace CodeWars.Tests
         #region <6kyu>
 
         [TestMethod]
+        public void ValidPhoneNumberTest()
+        {
+            Assert.IsTrue(Kata.ValidPhoneNumber("(123) 456-7890"));
+            Assert.IsFalse(Kata.ValidPhoneNumber("(1111)5X5 2345"));
+        }
+
+        [TestMethod]
         public void CleverSplitTest()
         {
             CollectionAssert.AreEqual(new string[] { "Buy", "a", "!car", "[!red green !white]", "[cheap or !new]" }, Kata.CleverSplit("Buy a !car [!red green !white] [cheap or !new]"));
