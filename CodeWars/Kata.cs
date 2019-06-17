@@ -159,6 +159,35 @@ namespace CodeWars
         #endregion
 
         #region <6kyu>
+        /// <summary>
+        /// Given two arrays of strings a1 and a2 return a sorted array r in lexicographical order of the strings of a1 which are substrings of strings of a2.
+        /// # Example 1: a1 = ["arp", "live", "strong"]
+        /// a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+        /// returns["arp", "live", "strong"]
+        /// # Example 2: a1 = ["tarp", "mice", "bull"]
+        /// a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+        /// returns[]
+        /// Notes:
+        /// Arrays are written in "general" notation.See "Your Test Cases" for examples in your language.
+        /// In Shell bash a1 and a2 are strings.The return is a string where words are separated by commas.
+        /// Beware: r must be without duplicates.
+        /// Don't mutate the inputs.
+        /// </summary>
+        /// <param name="array1"></param>
+        /// <param name="array2"></param>
+        /// <returns></returns>
+        public static string[] InArray(string[] array1, string[] array2)
+        {
+            var list = new List<string>();
+            foreach (var item in array1.OrderBy(x => x).ToArray())
+            {
+                if (array2.Where(x => x.Contains(item)).Count() > 0)
+                {
+                    list.Add(item);
+                }
+            }
+            return list.ToArray();
+        }
 
         /// <summary>
         /// #Find the missing letter
@@ -551,7 +580,8 @@ namespace CodeWars
         /// </summary>
         /// <param name="results"></param>
         /// <returns></returns>
-        public static IEnumerable<string> MyLanguages(Dictionary<string, int> results) => results.Where(x => x.Value >= 60).OrderByDescending(x => x.Value).Select(x => x.Key);
+        public static IEnumerable<string> MyLanguages(Dictionary<string, int> results) 
+            => results.Where(x => x.Value >= 60).OrderByDescending(x => x.Value).Select(x => x.Key);
         /// <summary>
         /// Trolls are attacking your comment section!
         /// A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.

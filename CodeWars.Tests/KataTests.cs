@@ -79,6 +79,15 @@ namespace CodeWars.Tests
 
         #region <6kyu>
         [TestMethod]
+        public void InArrayTest()
+        {
+            string[] a1 = new string[] { "arp", "live", "strong" };
+            string[] a2 = new string[] { "lively", "alive", "harp", "sharp", "armstrong" };
+            string[] r = new string[] { "arp", "live", "strong" };
+            CollectionAssert.AreEqual(r, Kata.InArray(a1, a2));
+        }
+
+        [TestMethod]
         public void FindMissingLetterTest()
         {
             Assert.AreEqual('e', Kata.FindMissingLetter(new[] { 'a', 'b', 'c', 'd', 'f' }));
