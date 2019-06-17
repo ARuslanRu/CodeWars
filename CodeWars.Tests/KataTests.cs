@@ -79,6 +79,13 @@ namespace CodeWars.Tests
 
         #region <6kyu>
         [TestMethod]
+        public void DeleteNthTest()
+        {
+            CollectionAssert.AreEqual(new int[] { 20, 37, 21 }, Kata.DeleteNth(new int[] { 20, 37, 20, 21 }, 1));
+            CollectionAssert.AreEqual(new int[] { 1, 1, 3, 3, 7, 2, 2, 2 }, Kata.DeleteNth(new int[] { 1, 1, 3, 3, 7, 2, 2, 2, 2 }, 3));
+        }
+
+        [TestMethod]
         public void InArrayTest()
         {
             string[] a1 = new string[] { "arp", "live", "strong" };
