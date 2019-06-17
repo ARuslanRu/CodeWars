@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CodeWars.Tests
@@ -288,6 +290,17 @@ namespace CodeWars.Tests
         #endregion
 
         #region <7kyu>
+        [TestMethod]
+        public void MyLanguagesTest()
+        {
+            CollectionAssert.AreEqual(new string[] { "Ruby", "Python" }, 
+                Kata.MyLanguages(new Dictionary<string, int> { { "Java", 10 }, { "Ruby", 80 }, { "Python", 65 } }).ToArray());
+            CollectionAssert.AreEqual(new string[] { "Dutch", "Greek", "Hindi" },
+                Kata.MyLanguages(new Dictionary<string, int> { { "Hindi", 60 }, { "Greek", 71 }, { "Dutch", 93 } }).ToArray());
+            CollectionAssert.AreEqual(new string[] { },
+                Kata.MyLanguages(new Dictionary<string, int> { { "C++", 50 }, { "ASM", 10 }, { "Haskell", 20 } }).ToArray());
+        }
+
         [TestMethod]
         public void DisemvowelTest()
         {
