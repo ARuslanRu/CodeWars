@@ -76,6 +76,17 @@ namespace CodeWars
 
         #region <5kyu>
         /// <summary>
+        /// In this example you have to validate if a user input string is alphanumeric. The given string is not nil, so you don't have to check that.
+        /// The string has the following conditions to be alphanumeric:
+        /// At least one character("" is not valid)
+        /// Allowed characters are uppercase / lowercase latin letters and digits from 0 to 9
+        /// No whitespaces/underscore
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static bool Alphanumeric(string str) => Regex.IsMatch(str, @"^[a-zA-Z0-9]+$");
+
+        /// <summary>
         /// Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
         /// Notes:
         /// Only lower case letters will be used(a-z). No punctuation or digits will be included.

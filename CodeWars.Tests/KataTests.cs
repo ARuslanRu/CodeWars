@@ -30,6 +30,15 @@ namespace CodeWars.Tests
 
         #region <5kyu>
         [TestMethod]
+        public void AlphanumericTest()
+        {
+            Assert.AreEqual(true, Kata.Alphanumeric("Mazinkaiser"));
+            Assert.AreEqual(false, Kata.Alphanumeric("hello world_"));
+            Assert.AreEqual(true, Kata.Alphanumeric("PassW0rd"));
+            Assert.AreEqual(false, Kata.Alphanumeric("     "));
+        }
+
+        [TestMethod]
         public void JumbledStringTest()
         {
             string s, a;
