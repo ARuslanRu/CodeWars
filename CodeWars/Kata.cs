@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -12,7 +11,6 @@ namespace CodeWars
 {
     public class Kata
     {
-
         #region <4kyu>
 
         /// <summary>
@@ -604,7 +602,7 @@ namespace CodeWars
         /// </summary>
         /// <param name="results"></param>
         /// <returns></returns>
-        public static IEnumerable<string> MyLanguages(Dictionary<string, int> results) 
+        public static IEnumerable<string> MyLanguages(Dictionary<string, int> results)
             => results.Where(x => x.Value >= 60).OrderByDescending(x => x.Value).Select(x => x.Key);
         /// <summary>
         /// Trolls are attacking your comment section!

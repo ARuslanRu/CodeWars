@@ -331,5 +331,9 @@ namespace CodeWars.Tests
             Assert.AreEqual("www.codewars.com/katas/", Kata.RemoveUrlAnchor("www.codewars.com/katas/"));
         }
         #endregion
-    }
+
+        #region <8kyu>
+        
+         #endregion
+    }  
 }
