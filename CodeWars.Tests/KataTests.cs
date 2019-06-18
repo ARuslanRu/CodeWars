@@ -8,7 +8,6 @@ namespace CodeWars.Tests
     [TestClass]
     public class KataTests
     {
-
         #region <4kyu>
         [TestMethod]
         public void StringFuncTest()
@@ -114,7 +113,7 @@ namespace CodeWars.Tests
             CollectionAssert.AreEqual(new string[] { "Buy", "a", "!car", "[!red green !white]", "[cheap or !new]" }, Kata.CleverSplit("Buy a !car [!red green !white] [cheap or !new]"));
             CollectionAssert.AreEqual(new string[] { "!Learning", "!C#", "is", "[a joy]" }, Kata.CleverSplit("!Learning !C# is [a joy]"));
             CollectionAssert.AreEqual(new string[] { "[Cats and dogs]", "are", "!beautiful", "and", "[cute]" }, Kata.CleverSplit("[Cats and dogs] are !beautiful and [cute]"));
-        }     
+        }
 
         [TestMethod]
         public void CountSmileysTest()
@@ -309,7 +308,7 @@ namespace CodeWars.Tests
         [TestMethod]
         public void MyLanguagesTest()
         {
-            CollectionAssert.AreEqual(new string[] { "Ruby", "Python" }, 
+            CollectionAssert.AreEqual(new string[] { "Ruby", "Python" },
                 Kata.MyLanguages(new Dictionary<string, int> { { "Java", 10 }, { "Ruby", 80 }, { "Python", 65 } }).ToArray());
             CollectionAssert.AreEqual(new string[] { "Dutch", "Greek", "Hindi" },
                 Kata.MyLanguages(new Dictionary<string, int> { { "Hindi", 60 }, { "Greek", 71 }, { "Dutch", 93 } }).ToArray());
@@ -333,7 +332,7 @@ namespace CodeWars.Tests
         #endregion
 
         #region <8kyu>
-        
-         #endregion
-    }  
+
+        #endregion
+    }
 }
