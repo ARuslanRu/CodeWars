@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Info", "Info", "{36FBBC42-8
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeWars.UnitTests", "CodeWars.UnitTests\CodeWars.UnitTests.csproj", "{1520ECC3-C5F1-42DB-9E63-E0FD30C7B801}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{B1CE9120-F957-4918-8E75-BC551B196945}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1CE9120-F957-4918-8E75-BC551B196945}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1CE9120-F957-4918-8E75-BC551B196945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1520ECC3-C5F1-42DB-9E63-E0FD30C7B801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1520ECC3-C5F1-42DB-9E63-E0FD30C7B801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1520ECC3-C5F1-42DB-9E63-E0FD30C7B801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1520ECC3-C5F1-42DB-9E63-E0FD30C7B801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
