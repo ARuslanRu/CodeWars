@@ -51,6 +51,11 @@
     <Compile Include="PatternCraftAdapter\Target.cs" />
     <Compile Include="PatternCraftAdapter\Zealot.cs" />
     <Compile Include="PatternCraftAdapter\Zergling.cs" />
+    <Compile Include="PatternCraftStrategy\Fly.cs" />
+    <Compile Include="PatternCraftStrategy\IMoveBehavior.cs" />
+    <Compile Include="PatternCraftStrategy\IUnit.cs" />
+    <Compile Include="PatternCraftStrategy\Viking.cs" />
+    <Compile Include="PatternCraftStrategy\Walk.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shapes\Circle.cs" />
     <Compile Include="Shapes\CustomShape.cs" />
