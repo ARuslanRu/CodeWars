@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using System.Reflection;
 
 
 namespace CodeWars
@@ -157,6 +158,18 @@ namespace CodeWars
         #endregion
 
         #region <6kyu>
+
+        /// <summary>
+        /// You get an object and should return the names of all(!) methods, that you found for the object.
+        /// </summary>
+        /// <param name="TestObject"></param>
+        /// <returns></returns>
+        public static string[] GetMethodNames(object TestObject) => 
+            TestObject == null ? new string[] { } : TestObject
+                                                    .GetType()
+                                                    .GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                                                    .Select(x => x.Name)
+                                                    .ToArray();
         /// <summary>
         /// nough is enough!
         /// Alice and Bob were on a holiday.Both of them took many pictures of the places they've been, and now they want to show Charlie their entire collection. However, Charlie doesn't like this sessions, since the motive usually repeats.He isn't fond of seeing the Eiffel tower 40 times. He tells them that he will only sit during the session if they show the same motive at most N times. Luckily, Alice and Bob are able to encode the motive as a number. Can you help them to remove numbers such that their list contains each number only up to N times, without changing the order?
@@ -658,7 +671,7 @@ namespace CodeWars
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static List<Tuple<char, int>> OrderedCount(string input) => 
+        public static List<Tuple<char, int>> OrderedCount(string input) =>
             input.GroupBy(x => x).Select(x => new Tuple<char, int>(x.Key, x.Count())).ToList();
         #endregion
     }

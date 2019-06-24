@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using NUnit.Framework;
+using System.Linq;
 
 namespace CodeWars.UnitTests
 {
@@ -50,5 +50,23 @@ namespace CodeWars.UnitTests
         {
             return Kata.Remove(integerList, valuesList);
         }
+    }
+
+    [TestFixture]
+    public class ReflectionTests
+    {
+        [Test]
+        public void NullTest()
+        {
+            Assert.AreEqual(0, Kata.GetMethodNames(null).Length);
+        }
+
+        [Test]
+        public void NewObjectTest()
+        {
+            var testObject = new object();
+            var methodNameArray = Kata.GetMethodNames(testObject);
+            Assert.IsTrue(methodNameArray.Contains("ToString"));
+        }      
     }
 }
