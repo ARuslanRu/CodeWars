@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BingoCard.cs" />
     <Compile Include="Kata.cs" />
+    <Compile Include="Pagination.cs" />
     <Compile Include="PagnationHelper.cs" />
     <Compile Include="PatternCraftAdapter\IUnit.cs" />
     <Compile Include="PatternCraftAdapter\Marine.cs" />
