@@ -701,6 +701,15 @@ namespace CodeWars
 
         #region <8kyu>
         /// <summary>
+        /// Wilson primes satisfy the following condition. Let P represent a prime number.
+        /// Then((P-1)! + 1) / (P* P) should give a whole number.
+        /// Your task is to create a function that returns true if the given number is a Wilson prime.
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public static bool AmIWilson(int p) => (Enumerable.Range(1, p - 1).Aggregate((x, y) => x * y) + 1) % (p * p) == 0;
+
+        /// <summary>
         /// Count the number of occurrences of each character and return it as a list of tuples in order of appearance.
         /// Example:
         /// Kata.orderedCount("abracadabra") == new List<Tuple<char, int>>() { new Tuple<char, int>('a', 5), new Tuple<char, int>('b', 2), new Tuple<char, int>('r', 2), new Tuple<char, int>('c', 1), new Tuple<char, int>('d', 1)}

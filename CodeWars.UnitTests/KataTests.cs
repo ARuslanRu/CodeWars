@@ -8,6 +8,7 @@ namespace CodeWars.UnitTests
     [TestFixture]
     public class KataTests
     {
+        #region Remove Test
         [Test]
         public void OrderedCountTest()
         {
@@ -50,6 +51,36 @@ namespace CodeWars.UnitTests
         {
             return Kata.Remove(integerList, valuesList);
         }
+        #endregion
+
+        #region Wilson primes
+        [Test]
+        [TestCase(5, ExpectedResult = true)]
+        [TestCase(8, ExpectedResult = false)]
+        [TestCase(9, ExpectedResult = false)]
+        [TestCase(11, ExpectedResult = false)]
+        [TestCase(13, ExpectedResult = true)]
+        public static bool FixedTest(int p)
+        {
+            return Kata.AmIWilson(p);
+        }
+
+        [Test]
+        public static void RandomTest([Random(0, 100, 20)] int p)
+        {
+            Assert.AreEqual(Solution(p), Kata.AmIWilson(p), "Should work for " + p);
+        }
+
+        private static bool Solution(int p)
+        {
+            return (((Faculty(p - 1) + 1) / (Math.Pow(p, 2)))) % 1 == 0;
+        }
+
+        private static int Faculty(int num)
+        {
+            return (num == 1) ? 1 : num * Faculty(num - 1);
+        }
+        #endregion
     }
 
     [TestFixture]
@@ -67,6 +98,6 @@ namespace CodeWars.UnitTests
             var testObject = new object();
             var methodNameArray = Kata.GetMethodNames(testObject);
             Assert.IsTrue(methodNameArray.Contains("ToString"));
-        }      
+        }
     }
 }
