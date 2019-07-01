@@ -52,6 +52,10 @@
     <Compile Include="PatternCraftAdapter\Target.cs" />
     <Compile Include="PatternCraftAdapter\Zealot.cs" />
     <Compile Include="PatternCraftAdapter\Zergling.cs" />
+    <Compile Include="PatternCraftDecorator\IMarine.cs" />
+    <Compile Include="PatternCraftDecorator\Marine.cs" />
+    <Compile Include="PatternCraftDecorator\MarineArmorUpgrade.cs" />
+    <Compile Include="PatternCraftDecorator\MarineWeaponUpgrade.cs" />
     <Compile Include="PatternCraftStrategy\Fly.cs" />
     <Compile Include="PatternCraftStrategy\IMoveBehavior.cs" />
     <Compile Include="PatternCraftStrategy\IUnit.cs" />
