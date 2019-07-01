@@ -56,6 +56,11 @@
     <Compile Include="PatternCraftDecorator\Marine.cs" />
     <Compile Include="PatternCraftDecorator\MarineArmorUpgrade.cs" />
     <Compile Include="PatternCraftDecorator\MarineWeaponUpgrade.cs" />
+    <Compile Include="PatternCraftState\IUnit.cs" />
+    <Compile Include="PatternCraftState\IUnitState.cs" />
+    <Compile Include="PatternCraftState\SiegeState.cs" />
+    <Compile Include="PatternCraftState\Tank.cs" />
+    <Compile Include="PatternCraftState\TankState.cs" />
     <Compile Include="PatternCraftStrategy\Fly.cs" />
     <Compile Include="PatternCraftStrategy\IMoveBehavior.cs" />
     <Compile Include="PatternCraftStrategy\IUnit.cs" />
